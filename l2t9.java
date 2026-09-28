@@ -3,8 +3,9 @@
 public class l2t9 {
     public static void main(String[] args){
 
-        int[][] matrix = matrixInput.inputMatrix();
-        int res = 0;
+        int[][] matrix = matrixPut.inputMatrix();
+        System.out.println("Исходная матрица:");
+        matrixPut.matrixPrint(matrix);
 
         if (matrix.length != matrix[0].length){
             System.out.print("Матрица не является квадратной. Определитель не может быть вычислен.");
