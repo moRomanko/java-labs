@@ -28,7 +28,7 @@ public class matrixPut {
     else {
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                matrix[i][j] = (int)(Math.random() * 20) - 1;
+                matrix[i][j] = (int)(Math.random() * 20) - 10;
             }
         }
     }
