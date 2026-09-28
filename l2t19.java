@@ -6,14 +6,16 @@
 public class l2t19 {
     public static void main(String[] args) {
 
-        int[][] matrix = matrixInput.inputMatrix();
+        int[][] matrix = matrixPut.inputMatrix();
+        System.out.println("Исходная матрица:");
+        matrixPut.matrixPrint(matrix);
 
         int[] saddleRowCount = findSaddlePoints(matrix);
         System.out.println("В заданной матрице всего " + saddleRowCount[saddleRowCount.length-1] + " седловых точек.");
 
         int [][] sortedMatrix = bubbleSort(matrix, saddleRowCount);
         System.out.println("Матрица, отсортированная по количеству седловых точек в строке (по возрастанию):");
-        matrixPrint(sortedMatrix);
+        matrixPut.matrixPrint(sortedMatrix);
     }
 
 
@@ -66,16 +68,6 @@ public class l2t19 {
             }
         }
         return matrix;
-    }
-
-
-    public static void matrixPrint(int[][] matrix){
-        for (int i = 0; i < matrix.length; i++){
-            for (int j = 0; j < matrix[0].length; j++){
-                System.out.print(matrix[i][j]);
-            }
-            System.out.println();
-        }
     }
 
 }
