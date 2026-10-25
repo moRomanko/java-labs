@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Configuration status="WARN">
+
+    <Appenders>
+
+        <Console name="Console"
+                 target="SYSTEM_OUT">
+
+            <PatternLayout
+                    disableAnsi="false"
+                    noConsoleNoAnsi="false"
+                    pattern="%d{HH:mm:ss} %highlight{%-5level} %msg%n"/>
+
+        </Console>
+
+        <RollingFile name="InfoFile"
+                     fileName="logs/info.log"
+                     filePattern="logs/archive/info-%d{yyyy-MM-dd}.log.gz">
+
+            <PatternLayout
+                    pattern="%d %-5level %msg%n"/>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+
+        </RollingFile>
+
+        <RollingFile name="WarnFile"
+                     fileName="logs/warn.log"
+                     filePattern="logs/archive/warn-%d{yyyy-MM-dd}.log.gz">
+
+            <PatternLayout
+                    pattern="%d %-5level %msg%n"/>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+
+        </RollingFile>
+
+        <RollingFile name="ErrorFile"
+                     fileName="logs/error.log"
+                     filePattern="logs/archive/error-%d{yyyy-MM-dd}.log.gz">
+
+            <PatternLayout
+                    pattern="%d %-5level %msg%n"/>
+
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+            </Policies>
+
+        </RollingFile>
+
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+
+            <AppenderRef ref="Console"/>
+
+            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="WarnFile"/>
+            <AppenderRef ref="ErrorFile"/>
+
+        </Root>
+
+    </Loggers>
+
+</Configuration>
